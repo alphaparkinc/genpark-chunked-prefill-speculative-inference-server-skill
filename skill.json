@@ -1,0 +1,38 @@
+{
+  "name": "genpark-chunked-prefill-speculative-inference-server-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Chunked prefill speculative inference server optimizing high-concurrency KV cache memory fragmentation.",
+  "author": "genpark",
+  "category": "llm-inference",
+  "tags": [
+    "vllm",
+    "paged-attention",
+    "chunked-prefill",
+    "speculative-decoding",
+    "high-concurrency"
+  ],
+  "inputs": {
+    "batch_requests_count": {
+      "type": "integer"
+    },
+    "draft_model_spec": {
+      "type": "string"
+    },
+    "target_model_spec": {
+      "type": "string"
+    }
+  },
+  "outputs": {
+    "inference_batch_id": {
+      "type": "string"
+    },
+    "speculative_acceptance_rate_pct": {
+      "type": "number"
+    },
+    "aggregate_throughput_tok_per_sec": {
+      "type": "integer"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
